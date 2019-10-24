@@ -9,7 +9,7 @@ public class GenerateTerrain : MonoBehaviour
 
     private Vector3 lastEndPosition;
 
-    private IEnumerator coroutine;
+    bool spawnCheck = false;
     private void Awake()
     {
         lastEndPosition = levelPart_start.Find("EndPoint").position;
@@ -18,17 +18,20 @@ public class GenerateTerrain : MonoBehaviour
 
     private void Update()
     {
-        coroutine = Generate(3f);
-        StartCoroutine(coroutine);
+        if (!spawnCheck)
+        {
+            spawnCheck = true;
+            StartCoroutine(Generate(3f));
+        }
+            
     }
 
     private IEnumerator Generate(float waitTime)
     {
-        while(true)
-        {
-            yield return new WaitForSeconds(waitTime);
-            SpawnLevelPart();
-        }
+        
+        yield return new WaitForSeconds(waitTime);
+        SpawnLevelPart();
+        spawnCheck = false;
     }
     private void SpawnLevelPart()
     {
