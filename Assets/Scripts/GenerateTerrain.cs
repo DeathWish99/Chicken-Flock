@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class GenerateTerrain : MonoBehaviour
 {
+    const float CONST_PLAYER_END_DISTANCE = 200f;
     [SerializeField] private Transform levelPart_start;
     [SerializeField] private Transform levelPart_1;
-
+    [SerializeField] private Transform player;
     private Vector3 lastEndPosition;
 
     bool spawnCheck = false;
     private void Awake()
     {
         lastEndPosition = levelPart_start.Find("EndPoint").position;
-        SpawnLevelPart();
+        //SpawnLevelPart();
     }
 
     private void Update()
     {
-        if (!spawnCheck)
+        //Spawn by time
+        //if (!spawnCheck)
+        //{
+        //    spawnCheck = true;
+        //    StartCoroutine(Generate(3f));
+        //}
+
+        //spawn by player distance
+        if(CheckDistance())
         {
-            spawnCheck = true;
-            StartCoroutine(Generate(3f));
+            SpawnLevelPart();
         }
             
     }
@@ -43,5 +51,19 @@ public class GenerateTerrain : MonoBehaviour
     {
         Transform levelPartTransform = Instantiate(levelPart_1, spawnPosition, Quaternion.identity);
         return levelPartTransform;
+    }
+
+    private bool CheckDistance()
+    {
+        float distance = Vector3.Distance(player.position, lastEndPosition);
+
+        if(distance < CONST_PLAYER_END_DISTANCE)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
