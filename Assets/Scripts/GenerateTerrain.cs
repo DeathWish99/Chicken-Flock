@@ -5,10 +5,18 @@ using UnityEngine;
 public class GenerateTerrain : MonoBehaviour
 {
     const float CONST_PLAYER_END_DISTANCE = 200f;
+    const float CONST_LEVEL_PART_Y = 7.48f;
     [SerializeField] private Transform levelPart_start;
     [SerializeField] private Transform levelPart_1;
     [SerializeField] private Transform player;
+    [SerializeField] private Transform obstacle;
     private Vector3 lastEndPosition;
+    private Vector3 spawnLocation;
+
+    int spawnNum;
+
+    float initialX = 0;
+    float lastX;
 
     bool spawnCheck = false;
     private void Awake()
@@ -44,7 +52,10 @@ public class GenerateTerrain : MonoBehaviour
     private void SpawnLevelPart()
     {
         Transform lastLevelPartTransform = SpawnLevelPartPosition(lastEndPosition);
+        initialX = lastEndPosition.x;
         lastEndPosition = lastLevelPartTransform.Find("EndPoint").position;
+        lastX = lastEndPosition.x;
+        SpawnObstacle();
     }
 
     private Transform SpawnLevelPartPosition(Vector3 spawnPosition)
@@ -65,5 +76,18 @@ public class GenerateTerrain : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private void SpawnObstacle()
+    {
+        spawnNum = Random.Range(1, 2);
+
+        for(int i = 0; i < spawnNum; i++)
+        {
+            spawnLocation = new Vector3(Random.Range(initialX, lastX), CONST_LEVEL_PART_Y);
+            Instantiate(obstacle, spawnLocation, Quaternion.identity);
+            initialX = spawnLocation.x;
+        }
+        
     }
 }
