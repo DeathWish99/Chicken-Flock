@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8364289898144254084}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.038407624, y: 0}
-  m_Size: {x: 1.3631848, y: 1.44}
+  m_Offset: {x: -0.07054354, y: -0.20610589}
+  m_Size: {x: 1.202505, y: 1.0277884}
   m_Direction: 0
