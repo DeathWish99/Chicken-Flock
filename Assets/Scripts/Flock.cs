@@ -5,23 +5,20 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     public GameObject chicken;
+    public GameObject manager;
     public List<GameObject> chicks;
 
     private Vector3 offset;
 
     public int lives;
 
-    void Start()
-    {
-        SpawnFlock();
-    }
 
     // Update is called once per frame
     private void Update()
     {
         if(lives < 0)
         {
-            EndGame();
+            manager.GetComponent<GameManager>().EndGame();
         }
     }
     void LateUpdate()
@@ -30,7 +27,7 @@ public class Flock : MonoBehaviour
     }
 
 
-    void SpawnFlock()
+    public void SpawnFlock()
     {
         
         for(int i = 0; i < lives; i++)
@@ -50,10 +47,5 @@ public class Flock : MonoBehaviour
             offset = new Vector3(i + 1.5f, 0.5f);
             chicks[i].transform.position = transform.parent.position - offset;
         }
-    }
-
-    void EndGame()
-    {
-
     }
 }

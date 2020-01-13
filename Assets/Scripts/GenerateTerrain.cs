@@ -9,11 +9,15 @@ public class GenerateTerrain : MonoBehaviour
     [SerializeField] private Transform levelPart_start;
     [SerializeField] private Transform levelPart_1;
     [SerializeField] private Transform player;
-    [SerializeField] private Transform obstacle;
+    [SerializeField] private List<Transform> obstacle;
     private Vector3 lastEndPosition;
     private Vector3 spawnLocation;
 
+    public GameObject coin;
+
     int spawnNum;
+    int obstacleIdx;
+    int coinNum;
 
     float initialX = 0;
     float lastX;
@@ -80,13 +84,20 @@ public class GenerateTerrain : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        spawnNum = Random.Range(1, 2);
+        spawnNum = Random.Range(1, 3);
+        coinNum = Random.Range(3, 8);
 
         for(int i = 0; i < spawnNum; i++)
         {
+            obstacleIdx = Random.Range(0, 2);
             spawnLocation = new Vector3(Random.Range(initialX, lastX), CONST_LEVEL_PART_Y);
-            Instantiate(obstacle, spawnLocation, Quaternion.identity);
-            initialX = spawnLocation.x;
+            Instantiate(obstacle[obstacleIdx], spawnLocation, Quaternion.identity);
+        }
+
+        for(int i = 0; i < coinNum; i++)
+        {
+            spawnLocation = new Vector3(Random.Range(initialX, lastX), CONST_LEVEL_PART_Y);
+            Instantiate(coin, spawnLocation, Quaternion.identity);
         }
         
     }

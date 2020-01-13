@@ -6,26 +6,34 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private float speed;
     private float jumpForce = 8f;
-    private float invinTimer = 1.5f;
+    private float invTimer;
+    public float speed;
     public float fallMultiplier;
     public float lowJumpMultiplier;
+    public float invTime;
 
+    public GameObject manager;
 
     private bool isTouching;
+    private bool isInv;
 
     Rigidbody2D rb;
 
     private Flock flock;
+
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         isTouching = true;
+        isInv = false;
     }
     void Start()
     {
         flock = GetComponentInChildren<Flock>();
+        
+        invTimer = invTime;
     }
 
     // Update is called once per frame
@@ -34,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         
         MoveControls();
-       
+        //InvincibleControl();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,9 +61,24 @@ public class PlayerController : MonoBehaviour
             flock.chicks.Remove(flock.chicks[flock.lives]);
 
             collision.collider.enabled = false;
+
+            //Color tmp = gameObject.GetComponent<SpriteRenderer>().color;
+            //tmp.a = 150f;
+            //gameObject.GetComponent<SpriteRenderer>().color = tmp;
+
+            //gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            //isInv = true;
         }
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Collider2D>().CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            manager.GetComponent<GameManager>().coin += 1 * manager.GetComponent<GameManager>().coinMultiplier;
+        }
+    }
     void MoveControls()
     {
 
@@ -73,7 +96,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 
-            Debug.Log("pressed");
         }
         //else if(rb.velocity.y > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
@@ -82,4 +104,26 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    //void InvincibleControl()
+    //{
+    //    if (isInv)
+    //    {
+    //        invTimer -= Time.deltaTime;
+    //        Debug.Log(invTimer);
+    //    }
+
+    //    if(invTimer <= 0)
+    //    {
+    //        isInv = true;
+    //        Color tmp = gameObject.GetComponent<SpriteRenderer>().color;
+    //        tmp.a = 255f;
+    //        gameObject.GetComponent<SpriteRenderer>().color = tmp;
+
+    //        gameObject.GetComponent<Collider2D>().enabled = true;
+
+    //        invTimer = invTime;
+    //        Debug.Log(isInv);
+    //    }
+    //}
 }
