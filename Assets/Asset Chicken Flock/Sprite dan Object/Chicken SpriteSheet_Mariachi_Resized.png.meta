@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: f3cc54fcaae7c9e43930ec30587e53a6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4669884577896540197
+    second: Chicken SpriteSheet_Mariachi_Resized_0
+  - first:
+      213: 5828325976143944612
+    second: Chicken SpriteSheet_Mariachi_Resized_1
+  - first:
+      213: 8357486754680335222
+    second: Chicken SpriteSheet_Mariachi_Resized_2
+  - first:
+      213: -7057507091525287290
+    second: Chicken SpriteSheet_Mariachi_Resized_3
+  - first:
+      213: 6638586619386208803
+    second: Chicken SpriteSheet_Mariachi_Resized_4
+  - first:
+      213: -6711865819499274261
+    second: Chicken SpriteSheet_Mariachi_Resized_5
+  - first:
+      213: -6220970671066045077
+    second: Chicken SpriteSheet_Mariachi_Resized_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +91,180 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 234
+        width: 144
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47c3a8820bf96d4d888cff61881fed2
+      internalID: -4669884577896540197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 234
+        width: 144
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16da3802da7dc54793d5b4cd2216292
+      internalID: 5828325976143944612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 234
+        width: 156
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aca115f953798042948fd3307e1e857
+      internalID: 8357486754680335222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_3
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 249
+        width: 145
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2f708f3a43d6443a18f91b997ee456
+      internalID: -7057507091525287290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 144
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247b290c4e8c74c4ca5e1458717fbe37
+      internalID: 6638586619386208803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 2
+        width: 157
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6845c44b823050646b35dc425740bd3e
+      internalID: -6711865819499274261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken SpriteSheet_Mariachi_Resized_6
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 19
+        width: 146
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475683cee53406740b5ca9f44b853533
+      internalID: -6220970671066045077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

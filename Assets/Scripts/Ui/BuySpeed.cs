@@ -7,6 +7,9 @@ public class BuySpeed : MonoBehaviour, IPointerClickHandler
 {
     public GameObject chicken;
     public GameObject manager;
+
+    public Sprite mariachiChicken;
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         if(manager.GetComponent<GameManager>().coin >= 55 && !manager.GetComponent<GameManager>().speedBuff)
@@ -16,6 +19,8 @@ public class BuySpeed : MonoBehaviour, IPointerClickHandler
 
             manager.GetComponent<GameManager>().coinText.text = manager.GetComponent<GameManager>().coin.ToString();
             manager.GetComponent<GameManager>().speedBuff = true;
+
+            chicken.GetComponent<SpriteRenderer>().sprite = mariachiChicken;
 
             PlayerPrefs.SetInt("Coins", manager.GetComponent<GameManager>().coin);
         }
