@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Advertisements;
+
 
 public class MainMenuButton : MonoBehaviour, IPointerClickHandler
 {
@@ -11,5 +13,10 @@ public class MainMenuButton : MonoBehaviour, IPointerClickHandler
         SceneManager.LoadScene(0);
 
         PlayerPrefs.SetInt("Retry", 0);
+
+        if (Advertisement.IsReady())
+        {
+            Advertisement.Show();
+        }
     }
 }

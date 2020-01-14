@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -51,8 +52,4 @@ public class GameManager : MonoBehaviour
         gameOver.SetActive(true);
     }
 
-    public void RetryControl()
-    {
-
-    }
 }

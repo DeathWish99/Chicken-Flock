@@ -95,7 +95,7 @@ public class GenerateTerrain : MonoBehaviour
             do
             {
                 spawnLocation = new Vector3(Random.Range(initialX, lastX), CONST_LEVEL_PART_Y);
-            } while (spawnLocation.x <= placedPositions[i].x + 4 && spawnLocation.x >= placedPositions[i].x - 4);
+            } while (spawnLocation.x <= placedPositions[i].x + 2 && spawnLocation.x >= placedPositions[i].x - 2);
             Instantiate(obstacle[obstacleIdx], spawnLocation, Quaternion.identity);
             placedPositions.Add(spawnLocation);
         }
