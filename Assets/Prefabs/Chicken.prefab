@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223744478546292763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.91, y: 1.27, z: -92.02831}
+  m_LocalPosition: {x: -15.37, y: 7.13, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2875343251363473014}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9a7ca0c7cddd914a8e3f9e6907d9bb2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83b78378aec1b124daf4c0254b53b95e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   invTime: 2
+  manager: {fileID: 0}
 --- !u!70 &7070214265748863456
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,5 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chicken: {fileID: 1223744478546292763, guid: 47f93e68b86a511468828fd27880f8fa, type: 3}
+  manager: {fileID: 0}
   chicks: []
   lives: 3

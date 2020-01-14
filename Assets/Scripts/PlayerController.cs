@@ -86,8 +86,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.right * speed;
         }
-        //if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && isTouching)
-        if (Input.GetKeyDown(KeyCode.Space) && isTouching)
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && isTouching)
+        //if (Input.GetKeyDown(KeyCode.Space) && isTouching)
         {
             isTouching = false;
             rb.velocity = new Vector2(speed, jumpForce);
@@ -97,8 +97,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 
         }
-        //else if(rb.velocity.y > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        else if(rb.velocity.y > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        //else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 

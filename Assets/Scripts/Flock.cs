@@ -44,7 +44,7 @@ public class Flock : MonoBehaviour
     {
         for(int i = 0; i < chicks.Count; i++)
         {
-            offset = new Vector3(i + 1.5f, 0.5f);
+            offset = new Vector3(i + 1.5f, 0.6f);
             chicks[i].transform.position = transform.parent.position - offset;
         }
     }
