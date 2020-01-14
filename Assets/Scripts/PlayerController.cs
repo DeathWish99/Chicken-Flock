@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float fallMultiplier;
     public float lowJumpMultiplier;
     public float invTime;
+    private Animator anim;
 
     public GameObject manager;
 
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         flock = GetComponentInChildren<Flock>();
         
         invTimer = invTime;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -85,12 +87,21 @@ public class PlayerController : MonoBehaviour
         if (isTouching)
         {
             rb.velocity = Vector2.right * speed;
+            anim.Play("Chicken_Walk");
         }
         //if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && isTouching)
         if (Input.GetKeyDown(KeyCode.Space) && isTouching)
         {
             isTouching = false;
             rb.velocity = new Vector2(speed, jumpForce);
+            if (anim.GetBool("Mariachi") == false)
+            {
+                anim.Play("Chicken_Jump");
+            }
+            else if (anim.GetBool("Mariachi") == true)
+            {
+                anim.Play("Chicken.Mariachicken_Jump");
+            }
         }
         if (rb.velocity.y < 0)
         {

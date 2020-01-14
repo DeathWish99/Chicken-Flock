@@ -16,7 +16,7 @@ public class BuySpeed : MonoBehaviour, IPointerClickHandler
 
             manager.GetComponent<GameManager>().coinText.text = manager.GetComponent<GameManager>().coin.ToString();
             manager.GetComponent<GameManager>().speedBuff = true;
-
+            //chicken.GetComponent<Animator>().SetBool("Mariachi", true);
             PlayerPrefs.SetInt("Coins", manager.GetComponent<GameManager>().coin);
         }
             

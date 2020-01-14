@@ -7,12 +7,16 @@ public class Flock : MonoBehaviour
     public GameObject chicken;
     public GameObject manager;
     public List<GameObject> chicks;
+    
 
     private Vector3 offset;
 
     public int lives;
 
-
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     private void Update()
     {
