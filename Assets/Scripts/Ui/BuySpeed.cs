@@ -22,6 +22,7 @@ public class BuySpeed : MonoBehaviour, IPointerClickHandler
 
             chicken.GetComponent<SpriteRenderer>().sprite = mariachiChicken;
 
+            //chicken.GetComponent<Animator>().SetBool("Mariachi", true);
             PlayerPrefs.SetInt("Coins", manager.GetComponent<GameManager>().coin);
         }
             
