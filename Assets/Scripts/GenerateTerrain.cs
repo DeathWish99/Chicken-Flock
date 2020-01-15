@@ -46,13 +46,13 @@ public class GenerateTerrain : MonoBehaviour
             
     }
 
-    private IEnumerator Generate(float waitTime)
-    {
+    //private IEnumerator Generate(float waitTime)
+    //{
         
-        yield return new WaitForSeconds(waitTime);
-        SpawnLevelPart();
-        spawnCheck = false;
-    }
+    //    yield return new WaitForSeconds(waitTime);
+    //    SpawnLevelPart();
+    //    spawnCheck = false;
+    //}
     private void SpawnLevelPart()
     {
         Transform lastLevelPartTransform = SpawnLevelPartPosition(lastEndPosition);
