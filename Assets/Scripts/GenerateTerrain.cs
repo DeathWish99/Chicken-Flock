@@ -85,7 +85,7 @@ public class GenerateTerrain : MonoBehaviour
     private void SpawnObstacle()
     {
         List<Vector3> placedPositions = new List<Vector3>();
-        spawnNum = Random.Range(1, 3);
+        spawnNum = Random.Range(1, 2);
         coinNum = Random.Range(3, 8);
 
         placedPositions.Add(new Vector3(-100, -100));

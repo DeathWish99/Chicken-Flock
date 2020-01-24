@@ -8,7 +8,7 @@ public class Parallax : MonoBehaviour
 
     public Transform camTransform;
     public Transform[] layers;
-    private float viewZone = 40;
+    private float viewZone = 43;
     private int leftIndex;
     private int rightIndex;
     private float constY;
@@ -31,14 +31,7 @@ public class Parallax : MonoBehaviour
     }
     private void Update()
     {
-        if (camTransform.transform.position.x < layers[leftIndex].transform.position.x + viewZone)
-        {
-            ScrollLeft();
-            Debug.Log(layers[0].transform.position);
-            Debug.Log(layers[1].transform.position);
-            Debug.Log(layers[2].transform.position);
-        }
-        else if (camTransform.transform.position.x > layers[leftIndex].transform.position.x - viewZone)
+        if (camTransform.transform.position.x > layers[leftIndex].transform.position.x + viewZone)
         {
             ScrollRight();
             Debug.Log(layers[0].transform.position);
@@ -52,18 +45,18 @@ public class Parallax : MonoBehaviour
         layers[leftIndex].position = new Vector3(1 * (layers[rightIndex].position.x + backgroundSize), constY, constZ);
         rightIndex = leftIndex;
         leftIndex++;
-        if (leftIndex > layers.Length)
+        if (leftIndex == layers.Length)
             leftIndex = 0;
     }
 
-    private void ScrollLeft()
-    {
-        int lastRight = rightIndex;
-        layers[rightIndex].position = new Vector3(1 * (layers[leftIndex].position.x + backgroundSize), constY, constZ);
-        leftIndex = rightIndex;
-        rightIndex--;
-        if (rightIndex < 0)
-            rightIndex = layers.Length - 1;
-    }
+    //private void ScrollLeft()
+    //{
+    //    int lastRight = rightIndex;
+    //    layers[rightIndex].position = new Vector3(1 * (layers[leftIndex].position.x + backgroundSize), constY, constZ);
+    //    leftIndex = rightIndex;
+    //    rightIndex--;
+    //    if (rightIndex < 0)
+    //        rightIndex = layers.Length - 1;
+    //}
 
 }
